@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "今榜一总排名",
+  "usingComponents": {
+    "picker": "/pages/component/picker/picker"
+  }
+}

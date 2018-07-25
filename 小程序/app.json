@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/headline/headline",
+    "pages/dipper-sound/dipper-sound"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",  
+    "selectedColor": "#828282",
+    "list": [{
+      "pagePath": "pages/headline/headline",
+      "text": "头条号",
+      "iconPath": "./static/image/toutiao.png",
+      "selectedIconPath": "./static/image/toutiao.png"
+    }, {
+      "pagePath": "pages/dipper-sound/dipper-sound",
+      "text": "抖音",
+      "iconPath": "./static/image/douyin.png",
+      "selectedIconPath": "./static/image/douyin.png"
+    }]
+  }
+}

@@ -1,0 +1,72 @@
+/**app.wxss**/
+page {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+
+
+/**全局样式**/
+.fl-ce {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.fl-le {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+.fl-ri {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center
+}
+.fl-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start
+}
+.fl-bo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end
+}
+
+
+
+/** 字体 **/
+
+@font-face {
+  font-family: 'iconfont';  /* project id 733811 */
+  src: url('//at.alicdn.com/t/font_733811_jxyng53x9ns.eot');
+  src: url('//at.alicdn.com/t/font_733811_jxyng53x9ns.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_733811_jxyng53x9ns.woff') format('woff'),
+  url('//at.alicdn.com/t/font_733811_jxyng53x9ns.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_733811_jxyng53x9ns.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bofangqishezhi:before { content: "\e669"; }
+
+.icon-sanjiaoxing:before { content: "\e658"; }
+
+.icon-jiangzhang:before { content: "\e62e"; }
+
+.icon-03:before { content: "\e600"; }
+
+.icon-icon-arrDown-fill:before { content: "\e601"; }
+

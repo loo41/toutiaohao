@@ -1,0 +1,245 @@
+a {
+  text-decoration: none;
+  color: black; 
+}
+.list-body {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #ebebeb;
+}
+.list-select {
+  min-height: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+}
+.select-box {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  padding: 0px 20px;
+}
+.select-left {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0rem;
+}
+.select-left div{
+  margin: 0px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #ababab
+}
+.timer-box {
+  width: 160px;
+  height: 24px;
+  border: 1px solid #e81d1c;
+  display: flex;
+}
+.select-right {
+  width: 15%;
+  font-size: 16px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.timer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4)
+}
+.timer-date {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin: 0!important;
+  color: #e92c2a!important;
+}
+.date-picker {
+  position: absolute;
+  margin: 0 auto;
+}
+.timer-logo {
+  flex: 1;
+  margin: 0!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-line-box {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #585858;
+}
+.list-line-box_head {
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 5%;
+}
+.list-line-box div {
+  display: flex;
+  align-items: center;
+}
+.list-line-box div:nth-child(1){
+  width: 10%;
+  height: 100%;
+  padding-left: 2%;
+}
+.list-line-box div:nth-child(2){
+  width: 20%;
+  height: 100%;
+}
+.list-line-box div:nth-child(3){
+  flex: 1;
+  height: 100%;
+}
+.list-line-box div:nth-child(4){
+  flex: 1;
+  height: 100%;
+}
+.list-line-box div:nth-child(5){
+  flex: 1;
+  height: 100%;
+}
+.list-line-box div:nth-child(6){
+  flex: 1;
+  height: 100%;
+}
+.list-line-box div:nth-child(7){
+  width: 15%;
+  height: 100%;
+}
+.img-box {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0px!important;
+}
+.img-line span {
+  margin: 0px!important;
+  margin-left: 5%!important;
+  color: #3e3e3e;
+}
+.list-img {
+  height: 50px;
+  width: 50px;
+}
+.img-line {
+  display: flex;
+  margin: 0px;
+}
+.active-bg {
+  background: #f2f5f6;
+}
+.jiangzhang-one {
+  font-size: 25px!important;
+  color: #e82f2e;
+  margin: 0px;
+}
+.jiangzhang-two {
+  font-size: 25px!important;
+  color: #eb7b39;
+  margin: 0px;
+}
+.jiangzhang-three {
+  font-size: 25px!important;
+  color: #e8a329;
+  margin: 0px;
+}
+.no-jiangzhang {
+  margin: 0px;
+  margin-left: 8px;
+}
+
+
+
+ 
+
+.dropdown-toggle {
+  margin: 0rem!important;
+  width: 180px!important;
+  border: 1px solid #e81d1c!important;
+  border-radius: 0rem!important
+}
+.open-indicator {
+  border-color: #e81d1c!important
+}
+.selected-tag {
+  color: #e81d1c!important
+}
+.open-indicator::before {
+  border-color: #e81d1c!important
+}
+.clear {
+  color: #e81d1c!important;
+  display: none!important;
+}
+.form-control {
+  width: 0rem!important;
+}
+
+
+
+/**page**/
+.page-box {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.page-box div{
+  margin: 0;
+  margin: 10px;
+  cursor: pointer!important;
+}
+.page-box div:nth-child(1){
+  height: 30px;
+  width: 60px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+.page-box div:nth-child(4){
+  height: 30px;
+  width: 60px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+.loading-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

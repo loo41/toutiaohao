@@ -1,0 +1,102 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="dotted-line"></view>
+  <view class="body">
+    <view class="header-box fl-ce">
+      <view class="header">
+        <view class="header-small-nav" animation="{{dropDownAnimation}}">
+           <view wx:for="{{navList}}" class="nav-line"  wx:for-index="index" wx:key="*this">
+              <view wx:for="{{item}}" wx:for-index="idx" class="fl-ce" wx:key="*this" id="{{index}}&&{{idx}}" bindtap="_nav" wx:for-item="nav">
+                <text class="navs {{listIndex[0] === index && listIndex[1] === idx? 'navs-style' : ''}}">{{nav.type}}</text>
+              </view>
+           </view>
+        </view>
+        <view class="header-box_but">
+          <view class="header-but fl-ce" bindtap="_navMore">
+            <text class="iconfont icon-03 but-icon1" wx:if="{{navListState}}"></text>
+            <text class="iconfont icon-03 but-icon" wx:if="{{!navListState}}"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="header-nav">
+      <view class="fl-ce {{listSwitch? 'header-nav_left': 'header-nav_right'}}" id="1" bindtap="_changeSwitch">日榜</view>
+      <view class="fl-ce {{!listSwitch? 'header-nav_left': 'header-nav_right'}}" id="0" bindtap="_changeSwitch">周榜</view>
+    </view>
+    <view class="header-date-box fl-ce">
+      <view class="header-date">
+        <view class="date-box fl-ce" bindtap="_openClosePicker">
+          <view class="date-check">
+              <view class="fl-ce">{{select.date}}</view>
+              <view style="width: 20%" >
+              <view  style="width: 100%!important; height: 100%">
+                <view class="fl-ce select">
+                  <text class="iconfont icon-icon-arrDown-fill icon-arrDown"/>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="info-box">
+          <text>样本数量: 89784</text>
+          <text wx:if="{{listSwitch}}">统计数据截止: {{select.date}}14时</text>
+          <text wx:if="{{!listSwitch}}">统计数据截止: {{displayDate}}14时</text>
+        </view>
+      </view>
+    </view>
+    <view class="main">
+      <view class="main-title">
+        <view>排行</view>
+        <view>公众号</view>
+        <view>今榜指数</view>
+      </view>
+      <view style="height: 85%">
+        <scroll-view scroll-y="true" style="height: 100%">
+          <view wx:for="{{rankingList}}" wx:for-index="idx" wx:key="*this" class="{{idx%2 === 0? 'active': ''}}">
+            <view class="ranking-body">
+              <view>
+                <image src="/static/image/one.png" wx:if="{{idx === 0}}" style="height: 50rpx;; width: 50rpx;"/>
+                <image src="/static/image/two.png" wx:elif="{{idx === 1}}" style="height: 50rpx;; width: 50rpx;"/>
+                <image src="/static/image/three.png" wx:elif="{{idx === 2}}" style="height: 50rpx;; width: 50rpx;"/>
+                <text wx:elif="{{idx}}" class="index-style">{{idx+1}}</text>
+              </view>
+              <view>
+                <view class="gz-img_box fl-ce">
+                  <view>
+                    <image src="{{item.icon}}" style="width: 95%; height: 95%; border-radius: 50%"/>
+                  </view>
+                </view>
+                <view class="list-gz_name fl-ce">{{item.media_name}}</view>
+              </view>
+              <view>
+                <view class="index">{{item.gross_score}}</view>
+                <view class="index-but fl-ce" bindtap="_changeState" id="{{idx}}">
+                  <view class="icon-box">
+                    <span class="iconfont icon-03 but-icon1" wx:if="{{!rankingControl[idx]}}"></span>
+                    <span class="iconfont icon-03 but-icon" wx:elif="{{rankingControl[idx]}}"></span>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="ranking-more-data" wx:if="{{rankingControl[idx]}}">
+              <view>粉丝数: {{item.fans_count}}</view>
+              <view>阅读数: {{item.view_count}}</view>
+              <view>评论数: {{item.comment_count}}</view>
+              <view>发文数: {{item.publish_num}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <picker 
+      bind:sure="_sure" 
+      bind:close="_close" 
+      pickData="{{listData}}" 
+      open="{{openPicker}}"
+      sureStyle=""
+      cancelStyle=""
+      />
+  </view>
+</view>
