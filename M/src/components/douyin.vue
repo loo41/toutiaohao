@@ -6,21 +6,23 @@
 <template>
   <div style="height: 100%">
     <div class="body-containers" :style="screenSmallStyle">
-      <div class="containers">
-        <div class="containers-box">
+      <div class="douyin-containers">
+        <div class="douyin-containers-box">
           <div :class="navList.length <= 2?'header-nav_less-two': 'header-nav'" :style="navHeight">
-            <div v-for="(item, index) in navList" :key="index" class="nav-line">
+            <div v-for="(item, index) in navList" :key="index" class="douyin-nav-line">
               <div v-for="(less, idx) in item" :key="idx" @click="_nav(index, idx)">
-                <span :class="listIndex[0] === index && listIndex[1] === idx? 'nav-line-active' : ''">{{less.name}}</span>
+                <span :class="listIndex[0] === index && listIndex[1] === idx? 'douyin-nav-line-active' : 'douyin-nav-line-none'">{{less.name}}</span>
               </div>
             </div>
           </div>
+          <!--
           <div class="header-nav_but">
             <div class="header-but" @click="_ariseMore">
               <span class="iconfont icon-sanjiaoxing" v-if="!navHeight.flag"></span>
               <span class="iconfont icon-03" v-if="navHeight.flag"></span>
             </div>
           </div>
+          -->
         </div>
       </div>
       <div class="list-box">
@@ -112,7 +114,7 @@ import { VueLoading } from 'vue-loading-template'
 import {getDouyinType, getDouyinDayTime, getDouyinWeekTime, getDouyinList} from '../api/index.js'
 import dayjs from 'dayjs'
 export default {
-  name: 'HelloWorld',
+  name: 'douyin',
   data () {
     return {
       show: false,

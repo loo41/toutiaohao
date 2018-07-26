@@ -2,7 +2,17 @@
 <view class="container">
   <view class="dotted-line"></view>
   <view class="body">
-    <view class="header-box fl-ce">
+    <view class="douyin-header-box fl-ce">
+    <view class="douyin-header">
+      <view class="{{navList.length <= 2? 'header-nav_less-two': 'header-small-nav'}}" animation="{{dropDownAnimation}}" >
+          <view wx:for="{{navList}}" class="nav-line"  wx:for-index="index" wx:key="*this">
+            <view wx:for="{{item}}" wx:for-index="idx" class="fl-ce" wx:key="*this" id="{{index}}&&{{idx}}" bindtap="_nav" wx:for-item="nav">
+              <text class="navs {{listIndex[0] === index && listIndex[1] === idx? 'douyin-navs-style' : 'douyin-navs-none'}}">{{nav.name}}</text>
+            </view>
+          </view>
+      </view>
+    </view>
+    <!--
       <view class="header">
         <view class="{{navList.length <= 2? 'header-nav_less-two': 'header-small-nav'}}" animation="{{dropDownAnimation}}" >
            <view wx:for="{{navList}}" class="nav-line"  wx:for-index="index" wx:key="*this">
@@ -18,6 +28,7 @@
           </view>
         </view>
       </view>
+      -->
     </view>
     <view class="header-nav">
       <view class="fl-ce {{listSwitch? 'header-nav_left': 'header-nav_right'}}" id="1" bindtap="_changeSwitch">日榜</view>
@@ -73,7 +84,7 @@
               <view>
                 <view class="gz-img_box fl-ce">
                   <view>
-                    <image src="{{item.avatar}}" style="width: 95%; height: 95%; border-radius: 50%"/>
+                    <image src="{{item.avatar}}" style="width: 100%; height: 100%; border-radius: 50%"/>
                   </view>
                 </view>
                 <view class="list-gz_name fl-ce">{{item.name}}</view>

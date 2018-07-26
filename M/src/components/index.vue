@@ -65,7 +65,7 @@
                 <div>
                   <div class="gz-img_box fl-ce">
                     <div>
-                      <img :src="item.icon" style="width: 95%; height: 95%; border-radius: 50%!important;"/>
+                      <img :src="item.icon" style="width: 100%; height: 100%; border-radius: 50%!important;"/>
                     </div>
                   </div>
                   <div class="list-gz_name fl-ce">

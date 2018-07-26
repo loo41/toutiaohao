@@ -198,7 +198,6 @@ Page({
     } else{
       timer = `${select.date.slice(0, 4)}-${select.date.slice(5, 7)}-${select.date.slice(8, 10)}`
     }
-    console.log(timer)
     this._getList(index, timer)
     this.setData({listIndex})
   },

@@ -172,7 +172,7 @@
 }
 .main-title {
   height: 15%!important;
-  min-height: 80rpx!important;
+  min-height: 70rpx!important;
   display: flex;
   justify-content: space-between;
 }
@@ -182,7 +182,7 @@
   justify-content: flex-start;
   align-items: center;
   color: #999999;
-  font-size: 32rpx;
+  font-size: 30rpx;
 }
 .main-title view:nth-child(1) {
   width: 30%;
@@ -192,7 +192,7 @@
 .main-title view:nth-child(2) {
   width: 40%;
   box-sizing: border-box;
-  padding-left: 5%;
+  padding-left: 6%;
 }
 .main-title view:nth-child(3) {
   width: 40%;
@@ -203,7 +203,7 @@
 
 /** 循环主体 **/
 .ranking-body {
-  height: 150rpx;
+  height: 120rpx;
   display: flex;
   justify-content: space-between;
 }
@@ -211,7 +211,7 @@
   background-color: #f1f5f6;
 }
 .ranking-body view:nth-child(1) {
-  width: 27%;
+  width: 25%;
   justify-content: flex-start;
   box-sizing: border-box;
   display: flex;
@@ -233,8 +233,8 @@
   height: 100%;
 }
 .gz-img_box view:nth-child(1) {
-  height: 100rpx!important;
-  width: 100rpx!important;
+  height: 75rpx!important;
+  width: 75rpx!important;
   padding: 0px;
   overflow: hidden;
   display: flex;
@@ -242,7 +242,7 @@
 }
 .list-gz_name {
   flex: 1!important;
-  font-size: 32rpx;
+  font-size: 24rpx;
   display: flex;
   justify-content: flex-start;
   box-sizing: border-box;
@@ -254,13 +254,14 @@
   width: 60%!important;
   height: 100%;
   color: #d61f24;
-  font-size: 32rpx;
+  font-size: 24rpx;
   display: flex;
   justify-content: center!important;
 }
 .index-style {
   width: 50rpx;
   display: flex;
+  font-size: 24rpx;
   justify-content: center;
   align-items: center;
 }
@@ -313,3 +314,55 @@
   align-items: center;
 }
 
+/*douyin*/
+.douyin-header {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.douyin-header-box {
+  min-height: 200rpx;
+  padding: 30rpx;
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+  padding-bottom: 60rpx;
+  display: flex;
+  box-sizing: border-box;
+}
+.douyin-nav-line {
+  width: 100%;
+  height: 70rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+}
+.nav-line view {
+  flex: 1;
+  height: 70rpx;
+}
+.douyin-navs-style {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 28rpx;
+  padding: 0rpx!important;
+  background: #df202f;
+  border: 1px solid #df202f;
+  border-radius: 0!important;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.douyin-navs-none {
+  height: 100%;
+  width: 100%;
+  font-size: 28rpx;
+  padding: 0rpx!important;
+  border: 1px solid #dcdcdc;
+  background: #fafafa;
+  border-radius: 0!important;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}

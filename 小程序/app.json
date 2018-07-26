@@ -16,12 +16,12 @@
       "pagePath": "pages/headline/headline",
       "text": "头条号",
       "iconPath": "./static/image/toutiao.png",
-      "selectedIconPath": "./static/image/toutiao.png"
+      "selectedIconPath": "./static/image/toutiao-tou.png"
     }, {
       "pagePath": "pages/dipper-sound/dipper-sound",
-      "text": "抖音",
+      "text": "抖音博主",
       "iconPath": "./static/image/douyin.png",
-      "selectedIconPath": "./static/image/douyin.png"
+      "selectedIconPath": "./static/image/douyin-tou.png"
     }]
   }
 }

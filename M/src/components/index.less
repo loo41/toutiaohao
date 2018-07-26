@@ -162,7 +162,7 @@ a {
   border-top: 1px solid #e3e3e3;
 }
 .list-title {
-  height: 50px;
+  height: 40px;
   display: flex;
 }
 .list-title div {
@@ -171,7 +171,7 @@ a {
   justify-content: flex-start;
   align-items: center;
   color: #999999;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .list-title  div:nth-child(1) {
   width: 30%;
@@ -181,7 +181,7 @@ a {
 .list-title div:nth-child(2) {
   width: 40%;
   box-sizing: border-box;
-  padding-left: 5%;
+  padding-left: 7%;
 }
 .list-title div:nth-child(3) {
   width: 40%;
@@ -197,7 +197,7 @@ a {
   flex-direction: column;
 }
 .scroller-list-img {
-  height: 75px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -205,10 +205,10 @@ a {
   width: 27%;
   justify-content: flex-start;
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center!important;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 .scroller-list-img div:nth-child(2) {
   width: 43%;
@@ -225,8 +225,8 @@ a {
   height: 100%;
 }
 .gz-img_box div:nth-child(1) {
-  height: 50px!important;
-  width: 50px!important;
+  height: 40px!important;
+  width: 40px!important;
   padding: 0px;
   overflow: hidden;
   display: flex;
@@ -234,7 +234,7 @@ a {
 }
 .list-gz_name {
   flex: 1!important;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #3f3f3f;
   display: flex;
   justify-content: flex-start;
@@ -320,6 +320,9 @@ a {
   .info-box {
     padding: 0rem
   }
+  .date-check div:nth-child(1) {
+    font-size: 1rem!important;
+  }
 }
 
 
@@ -333,4 +336,52 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.douyin-containers {
+  min-height: 11rem;
+  box-sizing: border-box;
+}
+.douyin-containers-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.douyin-nav-line {
+  width: 100%;
+  height: 3.5rem;
+  font-size: 1.4rem;
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+}
+.douyin-nav-line div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.douyin-nav-line div span{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.douyin-nav-line-active {
+  background-color: #e71a19;
+  border: 1px solid #e71a19;
+  color: white!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.douyin-nav-line-none {
+  border: 1px solid #dcdcdc;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
