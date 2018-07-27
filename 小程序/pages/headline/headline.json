@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "头条号",
+  "navigationBarTitleText": "今榜",
   "usingComponents": {
     "picker": "/pages/component/picker/picker"
   }

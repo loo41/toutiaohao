@@ -51,7 +51,7 @@
       <div class="list-scroller">
         <div class="list-title">
           <div>排名</div>
-          <div>昵称</div>
+          <div>抖音博主</div>
           <div>今榜指数</div>
         </div>
         <div class="scroller-box">

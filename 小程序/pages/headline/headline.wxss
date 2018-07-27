@@ -14,7 +14,6 @@
   min-height: 200rpx;
   padding: 30rpx;
   padding-left: 60rpx;
-  padding-bottom: 60rpx;
   display: flex;
   box-sizing: border-box;
 }
@@ -59,7 +58,7 @@
 }
 .header-but {
   position: absolute;
-  bottom: -40rpx;
+  bottom: 5rpx;
   height: 40rpx;
   width: 40rpx;
   background: #df2123;

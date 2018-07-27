@@ -68,7 +68,7 @@
     <view class="main">
       <view class="main-title">
         <view>排行</view>
-        <view>公众号</view>
+        <view>抖音博主</view>
         <view>今榜指数</view>
       </view>
       <view style="height: 85%">

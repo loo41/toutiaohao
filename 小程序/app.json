@@ -14,12 +14,12 @@
     "selectedColor": "#828282",
     "list": [{
       "pagePath": "pages/headline/headline",
-      "text": "头条号",
+      "text": "今榜",
       "iconPath": "./static/image/toutiao-tou.png",
       "selectedIconPath": "./static/image/toutiao.png"
     }, {
       "pagePath": "pages/dipper-sound/dipper-sound",
-      "text": "抖音博主",
+      "text": "今榜",
       "iconPath": "./static/image/douyin-tou.png",
       "selectedIconPath": "./static/image/douyin.png"
     }]
