@@ -126,10 +126,17 @@ export default {
     }
   },
   watch: {
-    selected () {
+    async selected () {
       if (this.listData.length === 0) return
       let time = this._dealWith(this.selected)
-      if (!this.weeklyList && this.touDou) this.selected = this.selected.split('-')[0]
+      if (!this.weeklyList && this.touDou) {
+        let flag = this.selected.split('-')
+        if (flag.length <= 1) {
+          this.selected = flag[0]
+        } else {
+          this.selected = flag[1]
+        }
+      }
       this._getListData(this.typeID, time)
     },
     typeID () {
@@ -176,9 +183,19 @@ export default {
       await this.dealWithTime(timer)
       await this._getListData()
     },
+    _removeSive (date) {
+      return `${date.$y}-${(date.$M + 1) > 10 ? (date.$M + 1) : ('0' + (date.$M + 1))}-${date.$D > 10 ? date.$D : ('0' + date.$D)}`
+    },
     _dealWith (date) {
       if (date.length > 12 && !this.touDou) return date
-      return `${date.slice(0, 4)}-${date.slice(5, 7)}-${date.slice(8, 10)}`
+      if (!this.weeklyList) {
+        let time = `${date.slice(0, 4)}-${date.slice(5, 7)}-${date.slice(8, 10)}`
+        let timer = dayjs(time).subtract(7, 'day')
+        time = this._removeSive(timer)
+        return time
+      } else {
+        return `${date.slice(0, 4)}-${date.slice(5, 7)}-${date.slice(8, 10)}`
+      }
     },
     async _getListData (type, date) {
       this.loading = true
@@ -260,9 +277,9 @@ export default {
           let flag = item
           flag = await this.addTime(flag)
           let addSiveDate = dayjs(item).add(7, 'day')
-          addSiveDate = await this.addTime(`${addSiveDate.$y}-${addSiveDate.$M + 1}-${addSiveDate.$D}`)
+          addSiveDate = await this.addTime(`${addSiveDate.$y}-${addSiveDate.$M + 1 > 10 ? addSiveDate.$M + 1 : ('0' + (addSiveDate.$M + 1))}-${addSiveDate.$D > 10 ? addSiveDate.$D : ('0' + addSiveDate.$D)}`)
           this.pickData.push(`${flag}-${addSiveDate}`)
-          this.selected = this.pickData[0].split('-')[0]
+          this.selected = this.pickData[0].split('-')[1]
         })
       } else {
         await timer.forEach((item, i) => {

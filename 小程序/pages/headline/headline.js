@@ -54,10 +54,19 @@ Page({
   _setWeek (date, time) {
     let flag = time || 1
     let date7 = new Date((new Date(date).getTime() + flag * 60 * 60 * 1000 * 24))
-    let timer = `${date7.getFullYear()}年${date7.getMonth()+1}月${date7.getDate()}日`
-    if (time) return timer
+    let timer = null
+    if (time) {
+      timer = `${date7.getFullYear()}-${date7.getMonth()+1 > 10? date7.getMonth()+1: ('0'+(date7.getMonth()+1))}-${date7.getDate() > 10? date7.getDate(): ('0' + date7.getDate())}`
+      return timer
+    } else {
+      timer = `${date7.getFullYear()}年${date7.getMonth()+1 > 10? date7.getMonth()+1: ('0'+(date7.getMonth()+1))}月${date7.getDate() > 10? date7.getDate(): ('0' + date7.getDate())}日`
+    }
     this.data.displayDate = timer
     this.setData({displayDate: this.data.displayDate })
+  },
+  _removeSive (date) {
+    let date7 = new Date((new Date(date).getTime() - 7 * 60 * 60 * 1000 * 24))
+    return `${date7.getFullYear()}-${date7.getMonth()+1 > 10? date7.getMonth()+1: ('0'+(date7.getMonth()+1))}-${date7.getDate() > 10? date7.getDate(): ('0' + date7.getDate())}`
   },
   _getList (type, date) {
     wx.showLoading({title: '数据加载中'})
@@ -127,8 +136,8 @@ Page({
           result [i] = `${item} 至 ${this._setWeek(item, 7)}`
         })
         listData.time = result
-        this._setWeek(result[0].split('至')[0])
-        select.date = result[0].split('至')[0].split('-')
+        this._setWeek(result[0].split('至')[1])
+        select.date = result[0].split('至')[1].split('-')
         select.date[0] += '年'
         select.date[1] += '月'
         select.date[2] += '日'
@@ -144,6 +153,10 @@ Page({
       }
       that.setData({listData, select})
       let timer = `${select.date.slice(0, 4)}-${select.date.slice(5, 7)}-${select.date.slice(8, 10)}`
+      if (!this.data.listSwitch) {
+        timer = this._removeSive(timer)
+      }
+      console.log(timer)
       let index = this.data.navList[listIndex[0]][listIndex[1]].id
       this._getList(index, timer)
     })
@@ -157,10 +170,11 @@ Page({
     let {select, listIndex} = this.data
     let index = this.data.navList[listIndex[0]][listIndex[1]].id
     if (!this.listSwitch) {
-      let flag = data.join('').split('至')[0].replace(/\s+/g,"")
-      this._getList(index, flag)
+      let flag = data.join('').split('至')[1].replace(/\s+/g,"")
       select.date = flag
       this._setWeek(flag)
+      flag = this._removeSive(flag)
+      this._getList(index, flag)
     } else {
       let flag = data.join('')
       this._getList(index, flag)
@@ -198,6 +212,9 @@ Page({
     listIndex[1] = flag[1]
     let index = this.data.navList[listIndex[0]][listIndex[1]].id
     let timer = `${select.date.slice(0, 4)}-${select.date.slice(5, 7)}-${select.date.slice(8, 10)}`
+    if (!this.data.listSwitch) {
+      timer = this._removeSive(timer)
+    }
     this._getList(index, timer)
     this.setData({listIndex})
   },

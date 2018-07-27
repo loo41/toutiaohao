@@ -159,13 +159,16 @@ export default {
       await this.dealWithTime(timer)
       await this._getListData()
     },
+    famtTime (date) {
+      return `${date.$y}-${(date.$M + 1) > 10 ? (date.$M + 1) : ('0' + (date.$M + 1))}-${date.$D > 10 ? date.$D : ('0' + date.$D)}`
+    },
     async dealWithTime (timer) {
       let {pickData, date} = this
       if (!this.listSwitch) {
         timer.forEach((item, i) => {
-          let date = dayjs(item).add(1, 'day')
+          let date = dayjs(item).add(7, 'day')
           let flag = `${item} 至 ${date.$y}-${date.$M + 1}-${date.$D}`
-          timer[i] = {text: flag, value: item}
+          timer[i] = {text: flag, value: this.famtTime(date)}
         })
       } else {
         timer.forEach((item, i) => {
@@ -231,6 +234,10 @@ export default {
       }
       await this.dealWithTime(timer)
       let time = `${this.date.slice(0, 4)}-${this.date.slice(5, 7)}-${this.date.slice(8, 10)}`
+      if (!this.listSwitch) {
+        let timer = dayjs(time).subtract(7, 'day')
+        time = this.famtTime(timer)
+      }
       let index = this.navList[listIndex[0]][listIndex[1]].id
       await this._getListData(index, time)
     },
@@ -246,8 +253,12 @@ export default {
       this.listIndex.splice(0, 1, indexOne)
       this.listIndex.splice(1, 1, indexTwo)
       let index = this.navList[listIndex[0]][listIndex[1]].id
-      let timer = `${date.slice(0, 4)}-${date.slice(5, 7)}-${date.slice(8, 10)}`
-      await this._getListData(index, timer)
+      let time = `${date.slice(0, 4)}-${date.slice(5, 7)}-${date.slice(8, 10)}`
+      if (!this.listSwitch) {
+        let timer = dayjs(time).subtract(7, 'day')
+        time = this.famtTime(timer)
+      }
+      await this._getListData(index, time)
     },
 
     _ariseMore () {
@@ -284,6 +295,10 @@ export default {
       date[1] += '月'
       date[2] += '日'
       this.date = date.join('')
+      if (!this.listSwitch) {
+        let timer = dayjs(time).subtract(7, 'day')
+        time = this.famtTime(timer)
+      }
       let index = this.navList[listIndex[0]][listIndex[1]].id
       await this._getListData(index, time)
     },
