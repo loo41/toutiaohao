@@ -204,10 +204,10 @@ export default {
       }
       this.rankingControl = new Array(list.length).fill(false)
       list.forEach((item, i) => {
-        let countFans = parseInt((item.fans_count / 100000))
-        let countView = parseInt((item.view_count / 100000))
-        let countComment = parseInt((item.comment_count / 100000))
-        let countPublish = parseInt((item.publish_num / 100000))
+        let countFans = parseInt((item.fans_count / 10000))
+        let countView = parseInt((item.view_count / 10000))
+        let countComment = parseInt((item.comment_count / 10000))
+        let countPublish = parseInt((item.publish_num / 10000))
         if (countFans > 0) {
           list[i].fans_count = `${countFans}万+`
         }
